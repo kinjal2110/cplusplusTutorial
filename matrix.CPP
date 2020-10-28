@@ -1,0 +1,84 @@
+#include<iostream.h>
+#include<conio.h>
+class Matrix
+{
+   public:
+	   int i,j,a[3][3];
+	   void getdata()
+	   {
+	    for(i=0;i<=2;i++)
+	    {
+	       for(j=0;j<=2;j++)
+	       {
+		  cout<<"enter value of element a["<<i<<"]["<<j<<"]"<<endl;
+		  cin>>a[i][j];
+	       }
+	    }
+    }
+	 void showdata()
+	   {
+	     for(i=0;i<=2;i++)
+	     {
+		 for(j=0;j<=2;j++)
+		 {
+		  cout<<a[i][j]<<" ";
+		 }
+	       cout<<endl;
+	     }
+
+	    }
+
+	   void sum(Matrix m1,Matrix m2)
+
+	   {
+	      for(i=0;i<=2;i++)
+	     {
+		 for(j=0;j<=2;j++)
+		 {
+		   a[i][j]=m1.a[i][j]+m2.a[i][j];
+
+		 }
+	     }
+	   }
+	   void sub(Matrix m1,Matrix m2)
+
+	   {
+	      for(i=0;i<=2;i++)
+	     {
+		 for(j=0;j<=2;j++)
+		 {
+		   a[i][j]=m1.a[i][j]-m2.a[i][j];
+
+		 }
+	     }
+
+ }
+};
+void main()
+{
+    Matrix m1,m2,m3,m4;
+
+    clrscr();
+
+    cout<<"enterthe value of matrix 1 "<<endl;
+    m1.getdata();
+
+    cout<<"enter value of matrix 2"<<endl;
+    m2.getdata();
+
+    cout<<"matrix1="<<endl;
+    m1.showdata();
+
+    cout<<"matrix2="<<endl;
+    m2.showdata();
+
+    m3.sum(m1,m2);
+    cout<<"sum of matrix="<<endl;
+    m3.showdata();
+
+    m4.sub(m1,m2);
+    cout<<"sub of matrix="<<endl;
+    m4.showdata();
+    getch();
+}
+
